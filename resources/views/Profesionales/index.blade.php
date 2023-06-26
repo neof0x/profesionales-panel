@@ -12,15 +12,18 @@
         <h1>Gestor de Profesionales</h1>
         <div class="row">
             <div class="col-xl-12">
-                {{-- nos permite hacer busquedas --}}
-                <form action="{{route('profesional.index')}}" method="GET">  {{--estamos enviando la rutra profesional(web) al metodo index--}}
+                <!-- {{-- nos permite hacer busquedas --}} -->
+                <!-- <form action="{{route('profesional.index')}}" method="GET">  {{--estamos enviando la rutra profesional(web) al metodo index--}} -->
                     <div class="form-row">
                         <div class="col-sm-4 my-1">
                             <input type="text" class="form-control" name="texto" value="{{$texto}}">
                         </div>
-                        {{-- boton de busqueda --}}
+                        <!-- {{-- boton de busqueda --}} -->
                         <div class="col-auto my-1">
                             <input type="submit" class="btn btn-primary" value="Buscar">
+                        </div>
+                        <div class="col-auto my-1">
+                            <a href="{{route('Profesional.create')}}" class='btn btn-success'>Nuevo</a>
                         </div>
                     </div>
                 </form>
@@ -47,8 +50,8 @@
                                 </tr>
                             @else
                             
-                            {{-- fila profesionales: estas filas se van a ir repitiendo segun cuantos profesionales tengamos --}}
-                            @foreach ($profesionales as $profesional) {{-- estamos interando clientes en un objeto llamado cliente, el array profesionales lo recibimos desde PorfesionalController --}}
+                            <!-- {{-- fila profesionales: estas filas se van a ir repitiendo segun cuantos profesionales tengamos --}}
+                            @foreach ($profesionales as $profesional) {{-- estamos interando clientes en un objeto llamado cliente, el array profesionales lo recibimos desde PorfesionalController --}} -->
                             <tr>
                                 <td>Editar | Eliminar</td>
                                 <td>{{$profesional->id}}</td>
@@ -62,8 +65,9 @@
                                 <td>{{$profesional->archivos}}</td>
                             </tr>
                             @endforeach
-                            {{-- end fila profesionales --}}
+                            <!-- {{-- end fila profesionales --}} -->
                             @endif
+                            
                         </tbody>
                     </table>
                     {{$profesionales->links()}}

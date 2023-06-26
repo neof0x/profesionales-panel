@@ -29,15 +29,25 @@ class ProfesionalController extends Controller
      */
     public function create()
     {
-        //
+        return view('Profesionales.create');
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(Request $request) //aqui recibo los datos del gromulario
     {
-        //
+        $profesional = new Profesional;
+        $profesional->name=$request->input('name');
+        $profesional->apellido=$request->input('apellido');
+        $profesional->dni=$request->input('dni');
+        $profesional->email=$request->input('email');
+        $profesional->profesion=$request->input('profesion');
+        $profesional->programas=$request->input('programas');
+        $profesional->fecha=$request->input('fecha');
+        $profesional->archivos=$request->input('archivos');
+        $profesional->save();
+        return redireect()->route('Profesionales.index');
     }
 
     /**
