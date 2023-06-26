@@ -63,7 +63,8 @@ class ProfesionalController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $profesional= Profesional::FindOrFail($id);
+        return view('profesionales.edit',compact('profesional')); 
     }
 
     /**
@@ -71,7 +72,18 @@ class ProfesionalController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $profesional = Profesional::findOrFail($id);
+        $profesional->name= $request->input('name');
+        $profesional->apellido=$request->input('apellido');
+        $profesional->dni=$request->input('dni');
+        $profesional->email=$request->input('email');
+        $profesional->profesion=$request->input('profesion');
+        $profesional->programas=$request->input('programas');
+        $profesional->fecha=$request->input('fecha');
+        $profesional->archivos=$request->input('archivos');
+        $profesional->save();
+        return redirect()->route('Profesionales.index');
+
     }
 
     /**
@@ -79,6 +91,8 @@ class ProfesionalController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $profesional=Profesional::FindOrFail($id);
+        $profesional->delete();
+        return redirect()->route('Profesionales.index');
     }
 }

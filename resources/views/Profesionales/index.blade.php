@@ -53,7 +53,12 @@
                             <!-- {{-- fila profesionales: estas filas se van a ir repitiendo segun cuantos profesionales tengamos --}}
                             @foreach ($profesionales as $profesional) {{-- estamos interando clientes en un objeto llamado cliente, el array profesionales lo recibimos desde PorfesionalController --}} -->
                             <tr>
-                                <td>Editar | Eliminar</td>
+                                <td><a href="{{route('profesional.edit', $profesional->id)}}" class="btn btn-warning btn-sm">Editar</a> 
+                                <!-- Button trigger modal -->
+                                <button type="button" class="btn btn-danger btn-sm" data-bs-toggle="#modal-delete-{{$profesional->id}}" data-bs-target="#staticBackdrop">
+                                    Eliminar
+                                </button>
+                                </td>
                                 <td>{{$profesional->id}}</td>
                                 <td>{{$profesional->name}}</td>
                                 <td>{{$profesional->apellido}}</td>
@@ -64,6 +69,7 @@
                                 <td>{{$profesional->fecha}}</td>
                                 <td>{{$profesional->archivos}}</td>
                             </tr>
+                             @include('Profesionales.delete')
                             @endforeach
                             <!-- {{-- end fila profesionales --}} -->
                             @endif
@@ -76,4 +82,6 @@
         </div>
     </div>
 </body>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js" integrity="sha384-fbbOQedDUMZZ5KreZpsbe1LCZPVmfTnH7ois6mU1QK+m14rQ1l2bGBq41eYeM/fS" crossorigin="anonymous"></script>
 </html>
