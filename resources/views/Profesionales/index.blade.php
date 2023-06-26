@@ -12,6 +12,20 @@
         <h1>Gestor de Profesionales</h1>
         <div class="row">
             <div class="col-xl-12">
+                {{-- nos permite hacer busquedas --}}
+                <form action="{{route('profesional.index')}}" method="GET">  {{--estamos enviando la rutra profesional(web) al metodo index--}}
+                    <div class="form-row">
+                        <div class="col-sm-4 my-1">
+                            <input type="text" class="form-control" name="texto" value="{{$texto}}">
+                        </div>
+                        {{-- boton de busqueda --}}
+                        <div class="col-auto my-1">
+                            <input type="submit" class="btn btn-primary" value="Buscar">
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="col-xl-12">
                 <div class="table-responsive">
                     <table class="table table-striped">
                         <thead>
@@ -27,16 +41,22 @@
                             <th>archivos</th>
                         </thead>
                         <tbody>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
+                            {{-- fila profesionales: estas filas se van a ir repitiendo segun cuantos profesionales tengamos --}}
+                            @foreach ($profesionales as $profesional) {{-- estamos interando clientes en un objeto llamado cliente, el array profesionales lo recibimos desde PorfesionalController --}}
+                            <tr>
+                                <td>Editar | Eliminar</td>
+                                <td>{{$profesional->id}}</td>
+                                <td>{{$profesional->name}}</td>
+                                <td>{{$profesional->apellido}}</td>
+                                <td>{{$profesional->dni}}</td>
+                                <td>{{$profesional->email}}</td>
+                                <td>{{$profesional->profesion}}</td>
+                                <td>{{$profesional->programas}}</td>
+                                <td>{{$profesional->fecha}}</td>
+                                <td>{{$profesional->archivos}}</td>
+                            </tr>
+                            @endforeach
+                            {{-- end fila profesionales --}}
                         </tbody>
                     </table>
                 </div>
