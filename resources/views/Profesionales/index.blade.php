@@ -41,6 +41,12 @@
                             <th>archivos</th>
                         </thead>
                         <tbody>
+                            @if (count($profesionales)<=0)
+                                <tr>
+                                    <td colspan="10">no hay resultados</td>
+                                </tr>
+                            @else
+                            
                             {{-- fila profesionales: estas filas se van a ir repitiendo segun cuantos profesionales tengamos --}}
                             @foreach ($profesionales as $profesional) {{-- estamos interando clientes en un objeto llamado cliente, el array profesionales lo recibimos desde PorfesionalController --}}
                             <tr>
@@ -57,8 +63,10 @@
                             </tr>
                             @endforeach
                             {{-- end fila profesionales --}}
+                            @endif
                         </tbody>
                     </table>
+                    {{$profesionales->links()}}
                 </div>
             </div>
         </div>
