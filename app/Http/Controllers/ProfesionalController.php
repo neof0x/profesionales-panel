@@ -35,7 +35,7 @@ class ProfesionalController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request) //aqui recibo los datos del gromulario
+    public function store(Request $request) //aqui recibo los datos del formulario
     {
         $profesional = new Profesional;
         $profesional->name=$request->input('name');
@@ -46,8 +46,8 @@ class ProfesionalController extends Controller
         $profesional->programas=$request->input('programas');
         $profesional->fecha=$request->input('fecha');
         $profesional->archivos=$request->input('archivos');
-        $profesional->save();
-        return redireect()->route('Profesionales.index');
+        $profesional->save();   
+        return redirect()->route('Profesionales.index');
     }
 
     /**

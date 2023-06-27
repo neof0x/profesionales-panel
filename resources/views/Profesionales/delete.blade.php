@@ -12,7 +12,7 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        Realmente deseas borrar al profesional {{$profesional->nombre." ".$profesional->apellido}}
+        Realmente deseas borrar al profesional {{$profesional->name." ".$profesional->apellido}}
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>

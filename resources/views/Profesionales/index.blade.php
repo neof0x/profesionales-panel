@@ -23,7 +23,7 @@
                             <input type="submit" class="btn btn-primary" value="Buscar">
                         </div>
                         <div class="col-auto my-1">
-                            <a href="{{route('Profesional.create')}}" class='btn btn-success'>Nuevo</a>
+                            <a href="{{route('profesional.create')}}" class='btn btn-success'>Nuevo</a>
                         </div>
                     </div>
                 </form>
@@ -69,7 +69,7 @@
                                 <td>{{$profesional->fecha}}</td>
                                 <td>{{$profesional->archivos}}</td>
                             </tr>
-                             @include('Profesionales.delete')
+                            @include('Profesionales.delete')
                             @endforeach
                             <!-- {{-- end fila profesionales --}} -->
                             @endif

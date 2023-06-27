@@ -11,7 +11,7 @@
         <h1>Editar profesional</h1>
         <div class="row">
             <div class="col-xl-12">
-                <form action="{{route('Profesional.update', $profesional->id)}}" method="POST">
+                <form action="{{route('profesional.update', $profesional->id)}}" method="POST">
                 @csrf
                 @method('PUT')
                     <div class="form-group">
@@ -47,8 +47,8 @@
                         <input type="text" class="form-control" name="archivos" require maxlength="50" value="{{$profesional->archivo}}">
                     </div>
                     <div class="form-group">
-                        <input type="text" class="btn btn-primary" value="Guardar">
-                        <input type="text" class="btn btn-primary" value="Cancelar">
+                        <input type="submit" class="btn btn-primary" value="Guardar">
+                        <input type="reset" class="btn btn-default" value="Cancelar">
                         <a href="javascript:history.black()">Ir al listado</a>
                     </div>
                 </form>

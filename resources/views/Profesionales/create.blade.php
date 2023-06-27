@@ -11,7 +11,7 @@
         <h1>Registrar profesional</h1>
         <div class="row">
             <div class="col-xl-12">
-                <form action="{{route('Profesional.store')}}" method="POST">
+                <form action="{{route('profesional.store')}}" method="post">
                 @csrf
                     <div class="form-group">
                         <label for="name">Name</label>
@@ -35,20 +35,20 @@
                     </div>
                     <div class="form-group">
                         <label for="programas">Programas</label>
-                        <input type="text" class="form-control" name="programas" require maxlength="50">
+                        <input type="text" class="form-control" name="programas">
                     </div>
                     <div class="form-group">
                         <label for="fecha">Fecha</label>
-                        <input type="text" class="form-control" name="fecha" require maxlength="50">
+                        <input type="text" class="form-control" name="fecha" >
                     </div>
                     <div class="form-group">
                         <label for="archivos">Archivos</label>
-                        <input type="text" class="form-control" name="archivos" require maxlength="50">
+                        <input type="text" class="form-control" name="archivos" >
                     </div>
                     <div class="form-group">
-                        <input type="text" class="btn btn-primary" value="Guardar">
-                        <input type="text" class="btn btn-primary" value="Cancelar">
-                        <a href="javascript:history.black()">Ir al listado</a>
+                        <input type="submit" class="btn btn-primary" value="Guardar">
+                        <input type="reset" class="btn btn-default" value="Cancelar">
+                        <a href="javascript:history.back()">Ir al listado</a>
                     </div>
                 </form>
             </div>

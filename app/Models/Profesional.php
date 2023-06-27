@@ -13,4 +13,6 @@ class Profesional extends Model
     protected $fillable = [
         'name' , 'apellido', 'dni', 'email', 'profesion', 'programas','fecha','archivos'
     ]; 
+
+    public $timestamps = false;
 }
